@@ -1,5 +1,5 @@
 insere_ordenado(E, L1, L2) :-
-    findall(M, (member(M, L1), M < E)),
+    findall(M, (member(M, L1), M < E), Menores),
     append(Menores, Maiores, L1),
     append(Menores, [E, Temp]),
     append(Temp, Maiores, L2).
