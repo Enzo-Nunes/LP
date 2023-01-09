@@ -20,14 +20,3 @@ transforma(Pred, [H1|T1], [H2|T2]) :-
     T_c =.. [Pred, H1, H2],
     call(T_c),
     transforma(Pred, T1, T2).
-
-par(X) :- 0 is X mod 2.
-filtra_inc([], _, []) :- !.
-filtra_inc([H|T], Pred, Res) :-
-    T_c =.. [Pred, H],
-    T_c, !,
-    Res = [H|T2],
-    filtra_inc(T, Pred, T2);
-    filtra_inc(T, Pred, Res).
-    
-
